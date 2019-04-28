@@ -4,8 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently -k \"gulp devApp\"",
+    "start": "yarn install && pm2 reload configs/app.json && pm2 save"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "js-yaml": "^3.13.1",
+    "morgan": "^1.9.1",
+    "redis": "^2.8.0",
+    "winston": "3.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "gulp": "^4.0.1",
+    "gulp-nodemon": "^2.4.2"
+  }
 }

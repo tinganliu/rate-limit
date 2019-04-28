@@ -1,0 +1,15 @@
+# General
+.DS_Store
+/**/*.swp
+/**/*.swo
+
+# Dependency directories
+/node_modules
+
+# Log
+/logs/*
+!/logs/.keep
+/yarn-error.log
+
+# Secret setting file
+/configs/settings.yml

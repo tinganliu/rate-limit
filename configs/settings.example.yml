@@ -1,0 +1,34 @@
+default: &default
+  port: 8000
+  log: &log
+    level: "info" # options: silly, debug, verbose, info, warn, error
+    dirname: "logs"
+    filename: "access.log"
+
+production:
+  <<: *default
+  log:
+    <<: *log
+    level: "info"
+    filename: "production.log"
+
+staging:
+  <<: *default
+  log:
+    <<: *log
+    level: "info"
+    filename: "staging.log"
+
+development:
+  <<: *default
+  log:
+    <<: *log
+    level: "debug"
+    filename: "development.log"
+
+test:
+  <<: *default
+  log:
+    <<: *log
+    level: "error"
+    filename: "test.log"
