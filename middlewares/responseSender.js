@@ -1,9 +1,9 @@
 module.exports = (req, res, next) => {
   res.sendOk = (payload) => {
-    res.status(200).json({ status: 'OK', ...payload });
+    res.status(200).send(payload);
   };
-  res.sendError = (statusCode, status, payload) => {
-    res.status(statusCode).json({ status, ...payload });
+  res.sendError = (statusCode) => {
+    res.status(statusCode).send('Error');
   };
   next();
 };

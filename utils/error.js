@@ -13,6 +13,7 @@ class ForbiddenError extends AppError {}
 class NotFoundError extends AppError {}
 class ConflictError extends AppError {}
 class UnprocessableError extends AppError {}
+class TooManyRequests extends AppError {}
 
 module.exports = {
   AppError,
@@ -22,4 +23,5 @@ module.exports = {
   NotFoundError,
   ConflictError,
   UnprocessableError,
+  TooManyRequests,
 };
