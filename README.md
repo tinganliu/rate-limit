@@ -1,6 +1,6 @@
 # Rate Limit
 
-TBD
+Demo the usage of a rate limit express middleware
 
 ## Preparation
 
@@ -25,4 +25,4 @@ TBD
 
 ## Testing
 
-TBD
+1. Run `yarn test` in root of project, now unit tests are running and watch the files

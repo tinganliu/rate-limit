@@ -1,5 +1,8 @@
 default: &default
   port: 8000
+  rateLimit:
+    maxCountNumber: 60
+    resetPeriodInMs: 60000
   log: &log
     level: "info" # options: silly, debug, verbose, info, warn, error
     dirname: "logs"
