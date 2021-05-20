@@ -4,8 +4,10 @@ const { createLogger, format, transports } = require('winston');
 const { log } = require('../configs/settings');
 
 const formatter = format.printf((info) => {
-  const isoDate = (new Date(info.timestamp)).toISOString();
-  return `[${isoDate} #${process.pid}] ${info.level.toUpperCase()}: ${info.message}`;
+  const isoDate = new Date(info.timestamp).toISOString();
+  return `[${isoDate} #${process.pid}] ${info.level.toUpperCase()}: ${
+    info.message
+  }`;
 });
 
 const standardTransport = new transports.Console({
@@ -19,10 +21,7 @@ const fileTransport = new transports.File({
 
 const logger = createLogger({
   level: log.level,
-  format: format.combine(
-    format.timestamp(),
-    formatter,
-  ),
+  format: format.combine(format.timestamp(), formatter),
   transports: [standardTransport, fileTransport],
   exitOnError: false,
 });

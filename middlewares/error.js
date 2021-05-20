@@ -8,7 +8,8 @@ const {
   TooManyRequests,
 } = require('../utils/error');
 
-module.exports = (error, req, res, next) => { // eslint-disable-line
+module.exports = (error, req, res, next) => {
+  // eslint-disable-line
   switch (error.constructor) {
     case ParamsError:
       return res.sendError(400);

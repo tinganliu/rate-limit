@@ -13,10 +13,12 @@ const genNodemonConfig = ({ script, env, done }) => ({
 });
 
 const devApp = (done) => {
-  nodemon(genNodemonConfig({
-    script: 'index.js',
-    done,
-  }));
+  nodemon(
+    genNodemonConfig({
+      script: 'index.js',
+      done,
+    }),
+  );
 };
 
 gulp.task('devApp', devApp);
